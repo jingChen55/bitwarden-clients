@@ -37,6 +37,7 @@
         "webpack://?:*/*": "${workspaceFolder}/*",
         "webpack://@bitwarden/cli/*": "${workspaceFolder}/apps/cli/*"
       }
-    }
+		},
+		"liveServer.settings.multiRootWorkspaceName": "browser"
   }
 }

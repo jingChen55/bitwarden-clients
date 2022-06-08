@@ -333,30 +333,30 @@ export class StateService<
   }
 
   async getCanAccessPremium(options?: StorageOptions): Promise<boolean> {
-    if (!(await this.getIsAuthenticated(options))) {
-      return false;
-    }
+    // if (!(await this.getIsAuthenticated(options))) {
+    //   return false;
+    // }
 
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions())
-    );
-    if (account.profile.hasPremiumPersonally) {
-      return true;
-    }
+    // const account = await this.getAccount(
+    //   this.reconcileOptions(options, await this.defaultOnDiskOptions())
+    // );
+    // if (account.profile.hasPremiumPersonally) {
+    //   return true;
+    // }
 
-    const organizations = await this.getOrganizations(options);
-    if (organizations == null) {
-      return false;
-    }
+    // const organizations = await this.getOrganizations(options);
+    // if (organizations == null) {
+    //   return false;
+    // }
 
-    for (const id of Object.keys(organizations)) {
-      const o = organizations[id];
-      if (o.enabled && o.usersGetPremium && !o.isProviderUser) {
-        return true;
-      }
-    }
+    // for (const id of Object.keys(organizations)) {
+    //   const o = organizations[id];
+    //   if (o.enabled && o.usersGetPremium && !o.isProviderUser) {
+    //     return true;
+    //   }
+    // }
 
-    return false;
+    return true;
   }
 
   async setCanAccessPremium(value: boolean, options?: StorageOptions): Promise<void> {
